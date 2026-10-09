@@ -1,0 +1,31 @@
+# Podman-Quadlet für Koordinate
+# Ablegen unter ~/.config/containers/systemd/koordinate.container (rootless)
+# oder /etc/containers/systemd/koordinate.container (root), dann:
+#   systemctl --user daemon-reload && systemctl --user start koordinate
+[Unit]
+Description=Koordinate – Karten-Geschenkbilder
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+Image=ghcr.io/dertika/koordinate:latest
+ContainerName=koordinate
+PublishPort=127.0.0.1:8080:8080
+# Optionale Laufzeit-Konfiguration (Geocoder, Kachelquelle):
+# Volume=%h/koordinate/config.js:/usr/share/nginx/html/config.js:ro,Z
+ReadOnly=true
+Tmpfs=/var/cache/nginx
+Tmpfs=/var/run
+Tmpfs=/tmp
+NoNewPrivileges=true
+DropCapability=ALL
+AddCapability=CHOWN SETUID SETGID
+AutoUpdate=registry
+HealthCmd=wget -qO- http://127.0.0.1:8080/ >/dev/null || exit 1
+HealthInterval=60s
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

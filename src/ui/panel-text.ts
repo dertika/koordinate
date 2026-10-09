@@ -44,7 +44,7 @@ export function textPanel(ctx: AppContext): HTMLElement {
     {},
     h('h2.panel-title', {}, t('text.title')),
     section(
-      t('text.title'),
+      t('text.words'),
       textInput(t('text.titleLabel'), s.title, (v) => {
         touch();
         store.set({ title: v });
@@ -59,7 +59,7 @@ export function textPanel(ctx: AppContext): HTMLElement {
       }),
     ),
     section(
-      t('text.coords'),
+      t('text.coordsSection'),
       toggle(t('text.coords'), s.showCoords, (v) => {
         store.set({ showCoords: v });
         ctx.rerender();
