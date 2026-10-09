@@ -63,6 +63,8 @@ export const de = {
   'style.lineWeight': 'Linienstärke',
 
   'text.title': 'Beschriftung',
+  'text.words': 'Texte',
+  'text.coordsSection': 'Koordinaten',
   'text.titleLabel': 'Titel',
   'text.subtitleLabel': 'Untertitel',
   'text.dedicationLabel': 'Datum oder Widmung',

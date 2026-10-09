@@ -59,6 +59,8 @@ export const en: Partial<Record<MessageKey, string>> = {
   'style.labels': 'Place names',
   'style.lineWeight': 'Line weight',
   'text.title': 'Lettering',
+  'text.words': 'Words',
+  'text.coordsSection': 'Coordinates',
   'text.titleLabel': 'Title',
   'text.subtitleLabel': 'Subtitle',
   'text.dedicationLabel': 'Date or dedication',
