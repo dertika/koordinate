@@ -32,6 +32,10 @@ Den Ordner `dist/` kann jeder statische Webserver ausliefern. Die Pfade sind rel
 
 ## Hosting
 
+### GitHub Pages
+
+Der Workflow `.github/workflows/pages.yml` baut die App bei jedem Push auf `main` und veröffentlicht `dist/` auf GitHub Pages, erreichbar unter `https://dertika.github.io/koordinate/`. Unter *Settings → Pages → Build and deployment* muss als Quelle **GitHub Actions** eingestellt sein. Manuell starten lässt sich der Workflow über *Actions → GitHub Pages → Run workflow*.
+
 ### Docker / Podman
 
 ```bash
